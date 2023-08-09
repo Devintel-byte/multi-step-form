@@ -2,12 +2,12 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 // import { useFormik } from 'formik';
 
 export default function Home() {
-  const router = useRouter();
+  const currentRoute = usePathname();
   const links = [
     {path: '/', label: '1'},
     {path: '/select-plan', label: '2'},
@@ -37,7 +37,7 @@ export default function Home() {
     <>
       <section className="box-border w-full h-screen m-0 p-0">
         <div className="items-center justify-center overflow-hidden">
-          {/* Sidebar and Step Indicators */}
+          {/* Sidebar and Step Navigation Menu */}
           <div className="flex w-full" id="sidebarwrapper">
             <Image
               src="./bg-sidebar-mobile.svg"
@@ -48,11 +48,11 @@ export default function Home() {
               className="w-full"
             />
             <div className="absolute flex items-center justify-center w-full mt-6" id="sidebar">
-              <div className="flex flex-row gap-4 text-white text-center items-center" id="steps">
-                {/* Step Indicators */}
+              <div className="flex flex-row gap-4 text-white text-center items-center" id="stepsNavMenu">
+                {/* Step Navigation Menu */}
                 {links.map(({ path, label }) => (
                   <Link key={path} href={path} passHref>
-                    <div className={`font-bold border rounded-full h-10 w-10 inline-block p-2 m-0 ${router.pathname === path ? "focus:bg-light-blue focus:text-black focus:border-none" : "text-white"}`}>
+                    <div className={`font-bold border rounded-full h-10 w-10 inline-block p-2 m-0 ${currentRoute === path ? "bg-light-blue text-black border-none" : "text-white"}`}>
                     {label}
                     </div>
                   </Link>
@@ -113,12 +113,14 @@ export default function Home() {
 
           {/* Next Step Button */}
           <div className="text-right pr-4 pb-3" id="btn-wrapper">
+            <Link href='./select-plan' passHref>
             <button
               className="bg-marine-blue border p-2.5 rounded-md mt-3 text-white font-medium"
               id="button"
             >
               Next Step
             </button>
+            </Link>
           </div>
         </div>
       </section>
