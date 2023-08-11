@@ -6,6 +6,11 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
+    "/not-found": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/not-found.js"
+    ],
     "/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -16,10 +21,15 @@
       "static/chunks/main-app.js",
       "static/chunks/app/select-plan/page.js"
     ],
-    "/not-found": [
+    "/pick-add-ons/monthly-payment/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/not-found.js"
+      "static/chunks/app/pick-add-ons/monthly-payment/page.js"
+    ],
+    "/pick-add-ons/yearly-payment/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/pick-add-ons/yearly-payment/page.js"
     ]
   }
 }

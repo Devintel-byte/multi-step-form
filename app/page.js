@@ -44,8 +44,8 @@ export default function Home() {
               alt="sidebar-mobile"
               width={320}
               height={80}
-              objectFit="fill"
-              className="w-full"
+              priority
+              className="w-full object-fill"
             />
             <div className="absolute flex items-center justify-center w-full mt-6" id="sidebar">
               <div className="flex flex-row gap-4 text-white text-center items-center" id="stepsNavMenu">
@@ -62,7 +62,7 @@ export default function Home() {
           </div>
 
           {/* Card Content */}
-          <div id="cardbg" className="items-center justify-center bg-light-gray px-4 pt-6 pb-[58px]">
+          <div id="cardbg" className="items-center justify-center bg-light-gray px-4 pt-6 pb-[52px]">
             <div id="cardcontent" className="w-full mt-[-98px] mb-9 px-4 py-10 flex flex-col justify-between bg-white rounded-lg shadow relative">
               <div>
                 {/* Personal Info Form */}

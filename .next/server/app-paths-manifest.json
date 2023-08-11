@@ -1,5 +1,6 @@
 {
   "/page": "app/page.js",
-  "/not-found": "app/not-found.js",
-  "/select-plan/page": "app/select-plan/page.js"
+  "/select-plan/page": "app/select-plan/page.js",
+  "/pick-add-ons/yearly-payment/page": "app/pick-add-ons/yearly-payment/page.js",
+  "/pick-add-ons/monthly-payment/page": "app/pick-add-ons/monthly-payment/page.js"
 }
