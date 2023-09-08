@@ -8,7 +8,8 @@ import { useRouter } from 'next/navigation';
 
 export default function SelectPlan({ onChange }) {
   const [ isActive, setIsActive ] = useState(null);
-  const [ isSwitchChecked, setIsSwitchChecked ] = useState(false)
+  const [ isSwitchChecked, setIsSwitchChecked ] = useState(false);
+  const [ selectedPlan, setSelectedPlan ] = useState(null); // State to store selected plan
 
   const currentRoute = usePathname();
   const router = useRouter();
@@ -16,8 +17,8 @@ export default function SelectPlan({ onChange }) {
   const links = [
     {path: '/', label: '1'},
     {path: '/select-plan', label: '2'},
-    {path: '/pick-add-ons', label: '3'},
-    {path: '/finishing-up', label: '4'}
+    {path: '/pick-add-ons/', label: '3'},
+    {path: '/finishing-up', label: '4'},
   ]
 
   const plans = [
@@ -48,7 +49,8 @@ export default function SelectPlan({ onChange }) {
   ]
 
   const handleActivePlan = (id) => {
-    setIsActive(id === isActive ? null : id)
+    setIsActive(id === isActive ? null : id);
+    setSelectedPlan(id) // Update the selected plan
   }
 
   const handleSwitchToggle = () => {
@@ -87,8 +89,8 @@ export default function SelectPlan({ onChange }) {
           </div>
 
           {/* Card Content */}
-          <div id="cardbg" className="items-center justify-center bg-light-gray px-4 pt-6 pb-[2px]">
-            <div id="cardcontent" className="w-full mt-[-98px] mb-9 px-4 py-10 flex flex-col justify-between bg-white rounded-lg shadow relative">
+          <div id="cardbg" className="items-center justify-center bg-alabaster px-4 pt-6 pb-[2px]">
+            <div id="cardcontent" className="w-full mt-[-98px] mb-9 px-5 py-8 flex flex-col justify-between bg-white rounded-lg shadow relative">
               <div>
                 {/* Select Your Plan Form */}
                 <h1 className="mb-2 text-2xl font-bold text-marine-blue">Select your plan</h1>
@@ -101,7 +103,7 @@ export default function SelectPlan({ onChange }) {
                   <div>
                 {plans.map(({id, img, label, price2, desc}) => (
                   <div key={id} 
-                  className={`bg-white border rounded-lg mt-4 ${id === isActive ? "bg-light-blue ring-1 ring-purplish-blue" : "border"}`} 
+                  className={`bg-white border rounded-lg mt-4 ${id === isActive ? "bg-magnolia ring-1 ring-purplish-blue" : "border"}`} 
                   onClick={() => handleActivePlan(id)}>
                     <div className='flex p-5'>
                     <Image 
@@ -122,7 +124,7 @@ export default function SelectPlan({ onChange }) {
                   <div>
                 {plans.map(({id, img, label, price}) => (
                   <div key={id} 
-                  className={`bg-white border rounded-lg mt-4 ${id === isActive ? "bg-light-blue ring-1 ring-purplish-blue" : "border"}`} 
+                  className={`bg-white border rounded-lg mt-4 ${id === isActive ? "bg-magnolia ring-1 ring-purplish-blue" : "border"}`} 
                   onClick={() => handleActivePlan(id)}>
                     <div className='flex p-5'>
                     <Image 
@@ -177,6 +179,27 @@ export default function SelectPlan({ onChange }) {
             Next Step
           </button>
           </Link>
+
+          {/* <Link
+            href={
+              isSwitchChecked && selectedPlan
+                ? isSwitchChecked
+                  ? `/pick-add-ons/monthly-payment?plan=${selectedPlan}`
+                  : `/pick-add-ons/yearly-payment?plan=${selectedPlan}`
+                : '#'
+            }
+            passHref
+          >
+            <button
+              className={`bg-marine-blue border p-2.5 rounded-md text-white font-medium ${
+                isSwitchChecked && selectedPlan ? '' : 'cursor-not-allowed'
+              }`}
+              id="button"
+              disabled={!isSwitchChecked || !selectedPlan}
+            >
+              Next Step
+            </button>
+          </Link> */}
           
           </div>
         </div>

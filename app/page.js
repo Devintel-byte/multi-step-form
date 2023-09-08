@@ -4,34 +4,35 @@ import React from 'react';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-// import { useFormik } from 'formik';
+import { useFormik } from 'formik';
 
 export default function Home() {
   const currentRoute = usePathname();
   const links = [
     {path: '/', label: '1'},
     {path: '/select-plan', label: '2'},
-    {path: '/pick-add-ons', label: '3'},
+    {path: '/pick-add-ons/', label: '3'},
     {path: '/finishing-up', label: '4'}
   ]
-  // const validate = (values) => {
-  //   const errors = {};
-  //   if (!values.email) {
-  //     errors.email = 'Valid email required';
-  //   } else if (
-  //     !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
-  //   ) {
-  //     errors.email = 'Valid email required';
-  //   }
-  //   return errors;
-  // };
+  const validate = (values) => {
+    const errors = {};
+    if (!values.email) {
+      errors.email = 'Valid email required';
+    } else if (
+      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
+    ) {
+      errors.email = 'Valid email required';
+    }
+    return errors;
+  };
 
-  // const formik = useFormik({
-  //   initialValues: {
-  //     email: '',
-  //   },
-  //   validate,
-  // });
+  const formik = useFormik({
+    initialValues: {
+      name: '',
+      email: '',
+    },
+    validate,
+  });
 
   return (
     <>
@@ -62,8 +63,8 @@ export default function Home() {
           </div>
 
           {/* Card Content */}
-          <div id="cardbg" className="items-center justify-center bg-light-gray px-4 pt-6 pb-[52px]">
-            <div id="cardcontent" className="w-full mt-[-98px] mb-9 px-4 py-10 flex flex-col justify-between bg-white rounded-lg shadow relative">
+          <div id="cardbg" className="items-center justify-center bg-alabaster px-4 pt-6 pb-[65px]">
+            <div id="cardcontent" className="w-full mt-[-98px] mb-9 px-5 py-8 flex flex-col justify-between bg-white rounded-lg shadow relative">
               <div>
                 {/* Personal Info Form */}
                 <h1 className="mb-2 text-2xl font-bold text-marine-blue">Personal info</h1>

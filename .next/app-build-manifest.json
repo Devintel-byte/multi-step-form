@@ -1,11 +1,5 @@
 {
   "pages": {
-    "/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/layout.css",
-      "static/chunks/app/layout.js"
-    ],
     "/not-found": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -21,15 +15,31 @@
       "static/chunks/main-app.js",
       "static/chunks/app/select-plan/page.js"
     ],
+    "/pick-add-ons/yearly-payment/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/pick-add-ons/yearly-payment/page.js"
+    ],
     "/pick-add-ons/monthly-payment/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/pick-add-ons/monthly-payment/page.js"
     ],
-    "/pick-add-ons/yearly-payment/page": [
+    "/finishing-up/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/pick-add-ons/yearly-payment/page.js"
+      "static/chunks/app/finishing-up/page.js"
+    ],
+    "/subscription-completed/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/subscription-completed/page.js"
+    ],
+    "/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/layout.css",
+      "static/chunks/app/layout.js"
     ]
   }
 }

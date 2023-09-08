@@ -14,7 +14,7 @@ export default function AddOnsYearly() {
     const links = [
         {path: '/', label: '1'},
         {path: '/select-plan', label: '2'},
-        {path: '/pick-add-ons', label: '3'},
+        {path: '/pick-add-ons/yearly-payment', label: '3'},
         {path: '/finishing-up', label: '4'}
       ]
 
@@ -75,8 +75,8 @@ export default function AddOnsYearly() {
           </div>
 
           {/* Card Content */}
-          <div id="cardbg" className="items-center justify-center bg-light-gray px-4 pt-6 pb-6">
-            <div id="cardcontent" className="w-full mt-[-98px] mb-9 px-4 py-10 flex flex-col justify-between bg-white rounded-lg shadow relative">
+          <div id="cardbg" className="items-center justify-center bg-alabaster px-4 pt-6 pb-10">
+            <div id="cardcontent" className="w-full mt-[-98px] mb-9 px-5 py-8 flex flex-col justify-between bg-white rounded-lg shadow relative">
               <div>
                 {/* Select Your Plan Form */}
                 <h1 className="mb-2 text-2xl font-bold text-marine-blue">Pick add-ons</h1>
@@ -86,7 +86,7 @@ export default function AddOnsYearly() {
 
                 {/* Checkbox Options */}
                 {addons.map(({id, label, desc, price}) => (
-                  <div key={id} className={`bg-white border rounded-lg p-3 mt-4 flex items-center ${isChecked[id] ? "bg-light-blue ring-1 ring-purplish-blue" : "border"}`}>
+                  <div key={id} className={`bg-white border rounded-lg p-3 mt-4 flex items-center ${isChecked[id] ? "bg-magnolia ring-1 ring-purplish-blue" : "border"}`}>
                         <input className='h-6 w-6 accent-purplish-blue border rounded-md'
                         id={`checkbox-${id}`} 
                         type='checkbox' 
